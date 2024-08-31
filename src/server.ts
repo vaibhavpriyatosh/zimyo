@@ -1,5 +1,8 @@
 import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
+import config from 'config';
+import logger from './utils/logger';
+import { checkRedisConnection } from './redisDb/redisDb';
 
 dotenv.config();
 
@@ -13,5 +16,6 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
+	checkRedisConnection();
 	console.log(`Server is running on http://localhost:${port}`);
 });

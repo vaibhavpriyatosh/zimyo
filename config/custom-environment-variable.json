@@ -1,0 +1,10 @@
+{
+	"port": "PORT",
+	"db_url": "DB_URL",
+	"db": {
+		"host": "DB_HOST",
+		"port": "DB_PORT",
+		"name": "DB_NAME"
+	},
+	"apiKey": "API_KEY"
+}
