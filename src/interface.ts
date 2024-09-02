@@ -3,6 +3,7 @@ export interface createUserTs {
 	email: string;
 	mobile: string;
 	password: string;
+	userType: string;
 }
 
 export interface updateUsersTs extends createUserTs {
@@ -59,58 +60,15 @@ export interface returnIdPass {
 }
 
 export interface returnById {
+	userType: string;
 	id: number;
 	name: string;
 	email: string;
 	mobile: string;
 }
 
-export interface createPostTs {
-	text?: string;
-	image?: string;
-	hashTags?: string;
-}
-
-export interface modelPostTs extends createPostTs {
+export interface createMenuI {
+	itemName: string;
+	price: string;
 	userId: number;
-}
-
-export interface modelupdatePostTs extends modelPostTs {
-	id: number;
-}
-
-export interface modelCreateLikeViewTs {
-	userId: number;
-	postId: number;
-	isLiked: boolean;
-	isViewed: boolean;
-}
-
-export interface modelCreateFollowListTs {
-	fromUser: number;
-	toUser: number;
-}
-
-export interface createFollowerList {
-	userList: number[];
-	userId: number;
-}
-
-export interface viewLikeTs {
-	likeViewList: { postId: number; isLiked: boolean; isViewed: boolean }[];
-	userId: number;
-}
-
-export interface getPostTs {
-	userId: number;
-	searchText: string;
-	page: number;
-	pageSize: number;
-}
-
-export interface createCommentTs {
-	postId: number;
-	userId: number;
-	parentId?: number;
-	content: string;
 }

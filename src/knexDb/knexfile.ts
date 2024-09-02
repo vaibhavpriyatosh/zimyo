@@ -5,7 +5,6 @@ import config from 'config';
 
 dotenv.config();
 
-console.log({ env: process.env.PORT });
 const configuration: any = {
 	client: 'pg',
 	connection: {

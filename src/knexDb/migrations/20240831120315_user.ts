@@ -6,6 +6,7 @@ export async function up(knex: Knex): Promise<void> {
 		table.text('name');
 		table.string('mobile').unique();
 		table.string('email').unique();
+		table.enum('user_type', ['EMPLOYEE', 'CUSTOMER']);
 		table.string('password').notNullable();
 		table.boolean('is_deleted').defaultTo(false);
 		table.timestamp('created_at').defaultTo(knex.fn.now());
